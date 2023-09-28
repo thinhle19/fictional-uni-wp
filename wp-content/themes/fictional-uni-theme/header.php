@@ -12,6 +12,7 @@
 
 <body <?php body_class() //automatically add lots of css class for each page
       // this might value when we want to style specific page 
+      // e.g., homepage, logged-in, page-id-123,...
       ?>>
   <header class="site-header">
     <div class="container">
@@ -22,9 +23,14 @@
       <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
       <div class="site-header__menu group">
         <nav class="main-navigation">
+          <!-- <?php wp_nav_menu(array(
+                  'theme_location' => 'headerMenuLocation'
+                ))
+                // headerMenuLocation registered from the functions.php
+                ?> -->
           <ul>
-            <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
-            <!-- use site_url in case we have multiple WP sites live in current host -->
+            <li><a href="<?php echo site_url('/about-us') //use site_url in case we have multiple WP sites live in current host 
+                          ?>">About Us</a></li>
             <li><a href="#">Programs</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Campuses</a></li>
